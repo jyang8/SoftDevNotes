@@ -1,0 +1,35 @@
+Aim: Always serve your passwords with a side of hash browns.
+
+Hash Function
+     Function designed to take in an arbitrary amount of data and return a fixed size sequence of bits called a "hash digest" or simply, hash.
+
+E.g.
+	10 character password -> 160 bits --sha224--> 224 bits
+	500 MB program -> 4 Gb(its) --sha224--> 224 bits
+
+	checksum -- used to check the hash (used heavily in torrent protocol)
+	hash collision -- different inputs give the same hash
+
+>>> import hashlib
+>>> hashlib.md5("12345")
+<md5 HASH obejct @ 0x10d7392f0>
+>>> hashlib.md5("12345").digest()
+"\x82|\xcb\x0e\xea\x8aplL4\xa1h\x91\xf8N{"
+
+	**Character encodings could end up looking different.
+	**If saved to a .csv file, there would be issues with commas.
+
+>>> hashlib.md5("12345").hexdigest()
+"827ccb0eea8a706c4c34a16891f84e7b"
+
+	**.hexdigest() has letters and numbers, no problematic characters.
+
+	Hash digests are useful for storing certain kinds of sensitive information.
+
+Creating a hash digest in python:
+	 hashlib
+		Python module for generating hash digests with different algorithms.
+
+	The following are different hash algorithms that can be used:
+
+	    md5, sha1, sha224, sha256, sha384, and sha512

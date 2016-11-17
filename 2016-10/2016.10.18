@@ -1,0 +1,21 @@
+Aim: WHERE did I put that data?
+Do Now: Using the database from the last assignment, write SELECT statements to do the following:
+    1. Generate a table containing course codes and grades
+        sqlite> SELECT code, mark FROM courses;
+    2. Generate a table with student names, id, and grades
+        sqlite> SELECT name, students.id, mark FROM students, courses;
+
+WHERE
+    Allows you to put restrictions on the results of a SELECT statement.
+    SELECT * FROM courses WHERE mark < 65;
+    **You can use the operators and, or**
+
+    sqlite> SELECT name, code, mark
+    ...> FROM students, courses
+    ...> WHERE students.id = courses.id and mark < 65;
+    name        code        mark      
+    ----------  ----------  ----------
+    sasha       systems     55        
+    tiesto      greatbooks  55        
+    tINI        softdev     55        
+

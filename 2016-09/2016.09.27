@@ -1,0 +1,19 @@
+Aim: Flask: serving artisanal web pages since 2010.
+
+"/occupations" vs "/occupations/" (compatibility issues on various browsers)
+
+FIle Paths and the Flask Server
+
+When a flask app runs, the directory where the flask file exists is considered the root directory of the web server.
+
+Paths for files opened by the app or supporting modules should be based on that root.
+
+
+flask_jobs/
+	app.py
+	utils/ **conventional name**
+		occupations.py
+	templates/ ***special name***
+	data/ **conventional name**
+		occupations.csv
+	static/ ***special name*** (files in this directory are automatically served by the flask server; must be at the root directory--same as app.py)

@@ -1,0 +1,42 @@
+Aim: sqlite, the low-fat alternative to SQL
+
+python sqlite module
+    import sqlite3
+
+    connect
+        Open/create an sqlite database.
+	If the database does not exist, create it.
+	db = sqlite3.connect(<db name>)
+
+    cursor
+	Create a database cursor object that will allow you to perform operations of the database.
+	c = db.cursor()
+
+    execute
+	Cursor method to perform the provided SQL operation, given as a string.
+	c.execute(<SQL statement>)
+
+    commit
+	Database method to save changes to the db
+	db.commit()
+
+    db.close()
+
+python protip format strings:
+    '(' + x + ', ' + y + ') is a point'
+    '(%d, %d) is a point'%(x,y)
+        %d: decimal integer
+	%s: string
+	%f: floating point
+	%x: hexadecimal integer
+	%o: octal integer
+	    etc.
+
+SQL SELECT statement
+    Used to get data from a database.
+    Creates a results table based on the query.
+    SELECT <column 1>, ... FROM <table 1>, ...;
+        Will return a new table containing only the requested columns from the requested tables.
+	SELECT name FROM students;
+
+sqlite> SELECT name, students.id, code FROM students, courses;

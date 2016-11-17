@@ -1,0 +1,17 @@
+Aim: C is for Cookie, but Sessions are Secure
+Do Now: And the winner of "I'm gonna demo my work is ..."
+
+Cookie & Sessions
+       Cookies are files that websites will save to your web browser to store information on a local machine.
+       Useful for keeping track of persistent information like login credentials.
+
+       Sessions
+	     Flask sessions are securely signed cookies.
+	     Since they are encrypted, they cannot be modified by the user of the local machine.
+	     The sessions object works exactly like a dictionary.
+	     	 Add data to a session:
+		    session[KEY] = DATA
+		 Remove data from a session:
+		    session.pop(KEY)
+
+		    **Secret keys

@@ -1,0 +1,24 @@
+Aim: Url binding is the art of redirection
+
+Sessions
+	The session object works exactly like a dictionary
+	    Add data to a session:
+	    	session[KEY] = DATA
+	    Remove data from a session:
+	    	session.pop(KEY)
+
+	In order for the session to be encrypted, we need to set a private key in our app:
+	   APP.secret_key = <RANDOM STRING>
+	        good way to get random data: os.urandom(32)
+		     Returns 32 random bits of data as a string
+
+	**Must import session to use it
+
+url_for
+	Flask function that will build the correct url for a particular function.
+	syntax: url_for( <FUNCTION> )
+
+redirect
+	Flask function that will redirect a call to one route to a different response.
+	Often used in combination with url_for.
+	E.g. return redirect( url_for('login') )

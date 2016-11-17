@@ -1,0 +1,19 @@
+Aim: What are we keeping in the flask?
+Do Now: In your discussion groups, recall what things were necessary to write web based programs in python.
+
+// fill in later
+
+Softdev toolbox part 1
+	python 2.7
+	pip
+		Python package manager
+		Basic usage: $ pip install <package>
+	virtualenv
+		Creates a sandbox for your python environment.
+		Allows you to maintain a specific python environment without messing with the system version.
+		Can install packages without root access to a system.
+	flask
+		"Microframework" for developing web applications.
+		Has its own development web server (no more public_html)
+		Contains the following 2 modules:
+			 werkzeug

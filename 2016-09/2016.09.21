@@ -1,0 +1,24 @@
+Aim: HTML Jinja Warrior
+Do Now: Write a basic HTML file with the correct headers and sections.
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Test Page</title>
+</head>
+
+<body>
+<h1>Hello</h1>
+</body>
+
+</html>
+
+$ which python (tells you the path of the python you use)
+
+HTML Templates (jinja2)
+     Takes a lot of the HTML out of your python code.
+     Template files must be stored in a templates/ directory at the same level as your Flask app file.
+     render_template(<FILE>, <VAR1>, <VAR2>, ... )
+          Flask function to take a template file and return it as a string.

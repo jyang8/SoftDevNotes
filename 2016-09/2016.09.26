@@ -1,0 +1,11 @@
+Aim: Your desktop might not be organized, but your code will be!
+Do Now: Lucky winner of "I'm doing a demo of my homework is..." Michael
+
+Example Flask Organization
+	flask-app/
+		app.py	the actual flask application
+		templates/ all your templates (E.g. main.html)
+		utils/ extra python modules (E.g. occupations.py)
+		data/ data files (E.g. occupations.csv>
+
+$ touch utils/__init__.py (Makes python think the file is a module)

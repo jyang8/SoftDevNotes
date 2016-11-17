@@ -1,0 +1,15 @@
+Aim: Extending your template knowledge.
+Do Now: Write a flask app with a single route and a simple html template.
+
+Extending HTML templates
+    Any template can be "inherited" by others.
+    To extend a template: {% extends "<TEMPLATE>" %}
+        **Should go at the top of your template**
+
+	{% block stuff %}
+   	AWESOME STUFF
+	{% endblock %}
+
+	**You cannot extend multiple pages**
+	**You cannot extend more than one level**
+
