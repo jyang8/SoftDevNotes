@@ -1,1 +1,41 @@
 Aim: Stay classy, css.
+
+div tag
+
+    <div> is a container element. Its sole purpose is to define a section of
+    your page that should be considered grouped together.
+
+class attribute
+
+    All html elements can have a class attribute. It is an identifier that can
+    be applied to multiple elements.
+
+    <div class="navbar"> ... </div>
+    <h2 class="new_chapter bold"> ... </h2>
+    **Spaces mean you apply multiple classes to the selector.**
+
+    Classes can be used as CSS selectors by putting a . before the class name.
+
+        .new_chapter {
+	    font-family: "Times New Roman", Times, serif;
+	    text-align: center;
+	}
+	**The reason there are quotes for "Times New Roman" is because it has
+	spaces in its name.**
+
+id attributes
+
+    All html elements can have an id attribute. It is an identifier that should
+    only be applied to a single element.
+
+    <div id="main_content"> ... </div>
+
+    id names can be used in <a> tags as the href target
+
+        <a href="#main_content"> ... </a>
+
+    ids can be used as selectors by putting a # before the id name
+
+    	#main_content {
+       	    border: 2px solid goldenrod; **size, style, color in that order**
+	}
