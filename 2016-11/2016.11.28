@@ -1,0 +1,43 @@
+Aim: After being framed, you might need to take a REST
+
+Tips for using frameworks
+
+    Many files have .min equivalents, which contains the same code without any 
+    extra formatting.
+
+    jquery is a popular javascript library used in many frameworks.
+
+    The order in which you include javascript files is important.
+
+    
+    E.g.
+        <script src="jquery-3.1.1.js"></script> 
+	<script src="bootstrap/js/bootstrap.min.js"></script>	
+
+	**If not in the correct order:
+	Uncaught Error:	Bootstrap's JavaScript requires jQuery**
+
+    Javascript in <head> or at the end of <body>?
+
+        Yet another programmer holy war
+
+	**<head>: slow because it has to download a lot of content**
+	**<body>: some elements do not respond because JavaScript has not 
+	downloaded**
+	**The trend now is end of <body>**
+
+REST APIs
+
+    API (Application Program Interface)
+
+        A published set of protocols that can be used to have your program 
+	interact with another program/service. 	
+
+    REST (Representational State Transfer)
+
+        APIs that transmit data back after receiving an http[s] GET request.
+
+	Returned data can be in various formats, most common are html, xml, json
+
+        Example REST call:
+	    https://api.nasa.gov/planetary/apod?api_key=z50CLcXbxVpm5pJfALskk1acWeBKRsNiFvBN1YYp
