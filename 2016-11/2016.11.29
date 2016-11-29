@@ -1,0 +1,56 @@
+Aim: Web crawling pythons
+
+Making and parsing a REST call in python
+
+    urllib2
+
+        Library to handle urls
+	
+	.urlopen
+	
+	    u = urllib2.urlopen(<URL>)	
+	    
+	    Open a url to be read by your program
+
+	    .geturl()
+
+	        Returns the actual url (in case of redirects)
+
+	    .info()
+	    
+	        Returns the http/s header information
+
+	    .read()
+
+	        Returns the contents of the target webpage
+
+	E.g.
+
+	>>> import urllib2
+	>>> u = urllib2.urlopen("http://www.google.com")
+	>>> u
+	<addinfourl at 139752633019856 whose fp = <socket._fileobject object at 0x7f1ab48d2c50>>
+	>>> u.geturl()
+	'http://www.google.com'
+	>>> u.read()
+	'<google's html stuff>'
+
+	**could be used to write imgs**
+
+	**http://api.nasa.gov/planetary/apod?api_key=z5OCLcXbxVpm5pJfALskk1aCWeBKRsNiFv8N1YYp**
+
+
+
+    json
+    
+	Library to work with json data
+
+	.loads
+
+	    d = json.loads(<STRING>)
+
+	    Turns a json object string into a dictionary
+
+	.dumps(<DICTIONARY>)
+	
+	    Turns a dictionary into a string

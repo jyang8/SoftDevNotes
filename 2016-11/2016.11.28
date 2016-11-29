@@ -40,4 +40,5 @@ REST APIs
 	Returned data can be in various formats, most common are html, xml, json
 
         Example REST call:
-	    https://api.nasa.gov/planetary/apod?api_key=z50CLcXbxVpm5pJfALskk1acWeBKRsNiFvBN1YYp
+	    https://api.nasa.gov/planetary/apod?api_key=<insert api_key>
+	    https://api.nasa.gov/planetary/apod?api_key=z5OCLcXbxVpm5pJfALskk1aCWeBKRsNiFv8N1YYp
