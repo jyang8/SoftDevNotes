@@ -1,0 +1,79 @@
+Aim: Functional code
+
+Document Object Model (DOM)
+
+    javascript derives most of its utility through being able to interact with html and xml documents.
+
+    The DOM is an API for interacting with html. It provides a structure that we can interact with and can be manipulated by functions.
+
+    Pages are represented as trees.
+
+    Selecting HTML elements
+
+        document.getElementById(<ID>)
+
+	document.getElementsByTagName(<TAG>)
+
+	document.getElementsByClassName(<CLASS>)
+
+
+    E.g.
+
+        > var h = document.getElementById("h");
+	<
+	> h
+	< <h1 id="h" class="blue">Hello World!</h1>
+	> h.innerHTML = "Adios!";
+	< "Adios!"
+	> var list = document.getElementsByTagName("li");
+	<
+	> list[1].innerHTML = "Woohoo!";
+	< "Woohoo!"
+	> list.length
+	< 8
+	> list[1].remove()
+	<
+	> list.length
+	< 7
+	> var v = document.createElement("hr");
+	< <hr>
+	> document.getElementById("div1").appendChild(v);
+	< <hr>
+	> var b = document.getElementsByTagName("button")[0];
+	<
+	> b.addEventListener( "click", alert( "Annoying!" ) );
+	<
+	> b.addEventListener( "click", function() { alert( "Annoying!" ); } );
+	<
+	> var f = function() { alert( "Great!" ); }
+	<
+	> f()
+	<
+	> b.addEventListener("click", f);
+
+
+    Manipulating DOM elements
+
+        .remove()
+
+	.innerHTML 
+
+	document.createElement( <HTML TAG NAME> )
+
+	.appendChild( <ELEMENT> )
+
+	.setAttribute( <NAME>, <VALUE> )
+
+	.getAttribute( <NAME> )
+
+	.addEventListener( <EVENT>, <FUNCTION> )
+
+
+	(define factorial (lamda (n))
+	    (if (= n 0)
+	    	1
+		(* n (factorial(- n 1)))))
+
+	** lambda creates an anonymous function, define names the function **
+	** function() is javascript's equivalent of lamda **
+	
