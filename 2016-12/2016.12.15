@@ -1,0 +1,28 @@
+var b = document.getElementById("b");
+
+var f = function(e) {
+    console.log(e);
+    console.log(this); **this will refer to the DOM element that triggered the event**
+};
+
+b.addEventListener("click", f);
+
+/*
+b.addEventListener("click",
+		   function() {
+		       alert("ANNOYING");
+		   });
+
+b.addEventListener("click", alert("ANNOYING")); **DOESN'T WORK**
+
+<script src="intro2.js"></script>
+*/
+
+E.g.
+    > f **Returns the function**
+    < function() {
+        alert("ANNOYING");
+      }
+    > f() **Runs the function**
+    >
+
