@@ -1,0 +1,42 @@
+Aim: Where'd mongo put that data?
+
+Retrieving data from mongodb
+
+    .find()
+        Collection method that returns a cursor object that can be
+	used to iterate through all the documents in a collection.
+
+    .find_one()
+
+        Collection method that returns a single document as a dictionary.
+	** Not a cursor. It returns a document as a dictionary. **
+
+    Querying a mongodb
+
+        .find() and .find_one() can take an argument to narrow the resulting
+	document.
+
+	Queries in pymongo are formatted as documents
+
+	    foo.find( { 'age' : 25 } )
+
+	    ** .find_one(x) returns dictionary **
+	    ** .find(x) returns cursor object **
+	    ** Not an error if you look for something that doesn't match **
+	    ** None type using .find_one() **
+	    
+	Search criteria can be modified using '$and', '$or', and '$not'
+
+	    ** Conditions are stored in a list **
+	    
+	    foo.find_one( {
+	    		   '$and' : [
+			       { 'name' : 'bob' },
+			       { 'age' : 25 }
+			   ]})
+	    
+	Using inequalities in searches
+
+	    $gt, $lt, $gte, $lte, $ne, $eq
+
+	    foo.find( { 'age' : { '$gte' : 21 } } )
