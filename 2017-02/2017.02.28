@@ -1,0 +1,15 @@
+Aim: Vector-ize me
+
+Creating SVG elements in javascript
+
+    document.createElementNS( <NAMESPACE>, <ELEMENT> );
+
+        Creates an element from a specified XML namespace
+
+
+
+
+**
+.setAttribute()
+.appendChild()
+**

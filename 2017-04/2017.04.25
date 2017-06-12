@@ -1,0 +1,59 @@
+Aim: Let's get some closure (not Clojure).
+
+Closures
+
+    1. A function is declared inside another function.
+
+    2. The inner function accesses a variable from the outer function
+       (outside of the local scope of the inner function).
+
+    3. The external function binds a value to the variable and finishes
+       (or closes) before the inner function can be completed.
+	
+    ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
+
+E.g.
+
+    >>> s = 'badpassword'
+    >>> [c for c in s]
+    	['b', 'a', 'd', 'p', 'a', 's', 's', 'w', 'o', 'r', 'd']
+    >>> [ {x : x*x} for x in range(10) ]
+    	[{0: 0}, {1: 1}, {2: 4}, {3: 9}, {4: 16},
+    	{5: 25}, {6: 36}, {7: 49}, {8: 64}, {9: 81}]
+    >>> { x : x*x for x in range(10) }
+    	{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+    >>> { x*x for x in range(10) }
+    	set([0, 1, 4, 81, 64, 9, 16, 49, 25, 36])
+    >>> { c for c in s }
+    	set(['a', 'b', 'd', 'o', 'p', 's', 'r', 'w']) **NO DUPLICATES**
+
+    ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
+
+    # not a closure yet, only the setup for a closure
+    def repeat(s):
+        def times(x):
+	    return s*x
+	return times
+
+    >>> repeat
+    	<function repeat at 0x106feaed8>
+    >>> repeat('hello')
+    	<function times at 0x106feaf50>
+    >>> repeat('hello ')(3)
+    	'hello hello hello '
+    
+    >>> h = repeat('hello ')
+    >>> b = repeat('bye ')
+    >>> h(2)
+    	'hello hello '
+    >>> b(3)
+    	'bye bye bye '
+
+
+    def repeat2(s):
+    	return lambda x : s*x
+
+    >>> repeat2('hello')
+    	<function <lambda> at 0x106fff140>
+    >>> repeat2('hello')(5)
+    	'hellohellohellohellohello'

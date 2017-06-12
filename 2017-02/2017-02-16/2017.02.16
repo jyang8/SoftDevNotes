@@ -1,0 +1,27 @@
+Aim: Let's Get Animated
+
+Do Now:
+    Create an html/js combo with a function that draws a circle on a canvas.
+    Call the function at the end of your js file.
+
+
+What we won't be using for animation
+    set Interval
+
+What we will be using
+    requestAnimationFrame
+
+Why?
+    requestAnimationFrame tells the browser to run a
+    specified function before drawing the next frame.
+
+    The browser will attempt to run ~60 frames per second.
+
+    It lets the browser handle when the code should be
+    executed (as opposed to setInterval which is based
+    on specific times).
+
+    It also lets the browser pause animation when a page
+    is not in the foreground.
+
+    -

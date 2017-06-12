@@ -1,0 +1,47 @@
+Aim: Your path to success starts here!
+
+javascript path functions
+
+    Paths are used to draw arbitrary shapes, including circles and curves
+
+    A context can keep track of one path at a time
+
+    The path is not drawn until stroke() is called
+
+    A path is considered done when a new beginPath() is called
+
+        beginPath()
+	    Starts or resets the current path
+
+	moveTo(X, Y)
+	    Moves the path to position (x, y), does not result in a line or a filled in section
+
+	lineTo(X, Y)
+	    Moves the path to position (x, y), will result in a line and a filled in section
+
+	closePath()
+	    Results in a line from the current position to the starting position
+
+	    The path can be continued after
+
+	stroke()
+	    Renders all the lines in the path, does not end the path
+
+	fill()
+	    Fills the interior of the path, will not work if the path has fewer than 3 points in it
+
+	arc(X, Y, RADIUS, START, END)
+	    Creates an arc path with center (X, Y) with START and END as the defining angles in radians
+	    **The arc is drawn clockwise**
+
+> var ctx = document.getElementById('drawing').getContext('2d');
+
+> ctx.beginPath();
+
+> ctx.moveTo(250, 150);
+
+> ctx.lineTo(250, 250);
+
+> ctx.lineTo(100, 25);
+
+> ctx.stroke();

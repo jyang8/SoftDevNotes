@@ -1,0 +1,41 @@
+Aim: upDAT(A)ing mongo.
+
+> show dbs
+admin       0.000GB
+binoculars  0.000GB
+local       0.000GB
+> use binoculars
+switched to db binoculars
+> show collections
+students
+teachers
+> db.students.find().pretty()
+
+Modifying data
+
+    .delete_one(<QUERY>)
+
+        Deletes the first document that matches the query
+
+    .delete_many(<QUERY>)
+
+        Deletes all the documents that match the query
+
+    .update_one(<QUERY>, <OPERATION>)
+
+        Updates a document that matches the query
+
+	Operation is a document that matches an update operation:
+
+	    '$set'
+	        Change the value of a field
+
+	    '$unset'
+	        Remove a field
+
+	    '$inc'
+		Increment the value of a field
+
+>>> col.update_one( { 'id' : '4' }, { '$set' : { 'name' : 'francis', 'age' : '12' } } )
+
+>>> col.update_one( { 'id' : '4' }, { '$unset' : { 'age' : '' } } )

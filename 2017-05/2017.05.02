@@ -1,0 +1,23 @@
+Map, reduce, filter
+
+import map_reduce, random
+
+def add(a,b):
+    return a+b
+
+l = map_reduce.randList(10)
+
+reduce(map_reduce.add, l)
+
+reduce(lambda a,b: a*b, l)
+reduce(lambda a,b: a if a < b else b, l) # returns smallest ele in list
+
+
+map performs an operation on each item in the list and creates a new list
+map(lamba x:x*2, l)
+returns new list in which each element is double the original
+
+filter(lambda x: x%2==1,l) 
+create a new list by performing this boolean check on every element
+
+map reduce works v well w huge datasets (hadoop?)

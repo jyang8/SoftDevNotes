@@ -1,0 +1,80 @@
+Aim: r3d3?
+
+d3.js
+    javascript framework designed for working with data
+
+    The Basics
+
+        Include http://d3js.org/d3.v3.min.js in a script tag to use d3,
+	or download the source and link that instead
+
+    Selectors
+
+        Like jquery, you can select DOM elements using d3 functions
+
+	d3.select( <IDENTIFIER> ):
+	    Returns the first element that matches the given identifier
+
+	d3.selectAll( <IDENTIFIER> ):
+	    Returns an array of all the elements that match the given identifier
+
+	So why d3?
+
+	    After selecting an element, you can set various attributes,
+	    like style, text, listeners...
+
+	    But you can also pass functions to set the values dynamically!
+
+	        d3.selectAll("p").style("font-size", function() {
+		return Math.floor(Math.random() * 20) +  "px"});
+
+
+	        d3.selectAll("p").data( info );
+		
+	    Binding data allows us to use it in other d3 calls
+
+	    Many of the methods that can use anonymous functions allow for parameters
+	    to those functions. The first parameter represents an item in the bound data,
+	    and the second represents the index of the item in the data set.
+
+	    **Calling data is what binds the new values.
+	    If data changes, you must update with the function that calls data.**
+
+E.g.
+
+    > var info = [23, 45, 10, 16, 3];
+    > d3.selectAll("p").data(info);
+    > d3.selectAll("p").style("font-size", function(d) { return d + "px" });
+    > d3.selectAll("p").text(function(d) { return d });
+    > d3.selectAll("p").text(function(d, i) { return d + " " + "i" });
+        **first arg is data, second arg is index**
+
+
+
+
+    > d3.select("circle");
+    < Returns an array of length 1, with null
+    
+    > var foo = svg.selectAll("circle")
+      .data(info)
+      .enter();
+   
+    > foo
+
+    > foo.append("circle")
+      .attr("cy", "250")
+      .attr("r", "40")
+      .attr("cx", function(d) {return d;});
+    < Returns an array of length 4, with 4 circle elements
+
+    > info[3] = 450;
+
+    > foo.data(info);
+    < Uncaught TypeError...
+
+    > svg.selectAll("circle").data(info)
+
+    > svg.selectAll("circle")
+      .attr("cy", "250")
+      .attr("r", "40")
+      .attr("cx", function(d) {return d;});

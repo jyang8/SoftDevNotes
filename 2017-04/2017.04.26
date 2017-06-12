@@ -1,0 +1,42 @@
+def header(f):
+    def inner():
+    	return '<hr><h1>' + str(f()) + '</h1><hr>'
+    return inner
+
+import random
+
+def repeat(s):
+    def times(x):
+    	return s*x
+    return times
+
+def repeat_l(s):
+    return lambda x: s*x
+
+def rand_list(n):
+    l = []
+    for i in range(n):
+    	l.append(random.randrange(-20, 20))
+    return l
+
+def quicksort(l):
+    if len(l) <= 1:
+        return l
+    pivot = random.choice(l)
+    lower = [i for i in l if i < pivot]
+    upper = [i for i in l if i > pivot]
+    return quicksort(lower) + (l.count(pivot) * [pivot]) + quicksort(upper)
+
+@header
+def greet():
+    greetings = ['Hello']
+    return random.choice(greetings)
+
+@header
+def farewell():
+    farewells = ['Goodbye']
+    return random.choice(greetings)
+
+
+#greet = header(greet)
+#farewell = header(farewell)

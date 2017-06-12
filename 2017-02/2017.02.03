@@ -1,0 +1,64 @@
+Aim: Mongo likes py
+
+Working with pymongo
+
+    from pymongo import MongoClient
+
+    Connecting to a mongodb server and database
+
+        server = MongoClient(<IP>)
+
+    To access databases and collections, you can use either [] or .
+
+        db = server['mydb']
+	db = server.mydb
+
+	c = db['students'] #db.students
+
+    Databases and collections are not created until a document has been added to them!
+    **called lazy**
+
+    To add a document
+
+        1. Create a dictionary
+	2. Insert it to the collection
+
+	    doc = { 'name' : 'bob', 'age' : 65 }
+
+	    c.insert_one( doc )
+
+	You can insert a list of documents with insert_many()
+
+
+e.g.
+
+    >>> from pymongo import MongoClient
+
+    >>> server = MongoClient('149.89.150.100')
+    **Computer is always 127.0.0.1**
+
+    >>> server
+    MongoClient(host=['149.89.150.100:27017'], document_class=dict, tz_aware=False, connect=True)
+
+    >>> db = server.mydb
+
+    >>> db
+    Database(MongoClient(MongoClient(host=['149.89.150.100:27017'], document_class=dict, tz_aware=False, connect=True), u'mydb')
+
+    >>> students = db.students
+
+    >>> students
+    Collection(Database(MongoClient(MongoClient(host=['149.89.150.100:27017'], document_class=dict, tz_aware=False, connect=True), u'mydb'), u'students')
+
+    >>> students.count()
+    0
+
+    >>> db.students.count()
+    0
+
+    >>> doc = { 'name' : 'bob', 'age' : 65 }
+
+    >>> students.insert_one( doc )
+    <pymongo.results.InsertOneResult object at >
+
+    >>> 

@@ -1,0 +1,16 @@
+Aim: Capturing bubbles.
+DN: Create an html/js program with the following features
+    An html file with an svg element and a "clear" button
+    A js function that will create and return a circle svg element
+    A js function that will call the function above and add the returned circle to the svg element
+    Attach this draw circle function to the svg element
+
+javascript event propagation
+
+    Events initially propagate downward from the top most node in the DOM tree to the target element.
+    This is known as event capturing.
+
+    After an event reaches its target, it then propagates back up the DOM tree.
+    This is known as event bubling
+
+    By default, event listeners do not trigger until the event bubbling phase.

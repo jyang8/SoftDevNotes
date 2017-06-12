@@ -1,0 +1,27 @@
+Aim: What's your vector Victor?
+
+SVG: scalable vector graphics
+
+XML
+
+    eXtensible Markup Language
+
+    It is not a formatting language (like HTML)
+
+    A framework for creating markup based grammars
+
+    An XML namespace is defined by the tags and
+    attributes associated with a specific XML language.
+
+SVG
+
+    The <svg> element is designed to store SVG code
+    (that is, SVG XML elements)
+
+        <svg xmlns="http://www.w3.org/2000/svg">
+	    SVG CODE HERE
+	</svg>
+
+	xmlns
+	    Attribute that identifies the namespace for
+	    the specific XML language being used.
